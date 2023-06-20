@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+puts "Hello from release_image.rb"
 
 require "mini_magick"
 require "down"
@@ -11,12 +12,13 @@ module ReleaseImage
   class Error < StandardError; end
 
   class Config
-    attr_accessor :api_key, :folder_path, :keywords
+    attr_accessor :api_key, :folder_path, :keywords, :seasons
 
     def initialize
       @api_key = nil
       @folder_path = nil
       @keywords = []
+      @seasons = true
     end
   end
 
@@ -30,6 +32,7 @@ module ReleaseImage
       @folder_path = ReleaseImage.config.folder_path
       @keywords    = ReleaseImage.config.keywords
       @api_key     = ReleaseImage.config.api_key
+      @seasons    = ReleaseImage.config.seasons
     end
 
     def generate
@@ -115,11 +118,14 @@ module ReleaseImage
     end
 
     def url
+      puts "query: #{query}"
       "#{BASE_URL}?query=#{query}&client_id=#{@api_key}"
     end
 
     def query
-      @keywords.concat([season]).join(" ")
+      result = @keywords
+      result += [season] if @seasons
+      result.join(" ")
     end
 
     def season
@@ -137,7 +143,7 @@ module ReleaseImage
   end
 
   def self.config
-    @config ||= Config.new
+    @config ||= ReleaseImage::Config.new
   end
 
   def self.generate(version:, date: nil)
