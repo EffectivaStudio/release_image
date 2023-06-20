@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-puts "Hello from release_image.rb"
 
 require "mini_magick"
 require "down"
