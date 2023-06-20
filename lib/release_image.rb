@@ -32,7 +32,7 @@ module ReleaseImage
       @folder_path = ReleaseImage.config.folder_path
       @keywords    = ReleaseImage.config.keywords
       @api_key     = ReleaseImage.config.api_key
-      @seasons    = ReleaseImage.config.seasons
+      @seasons     = ReleaseImage.config.seasons
     end
 
     def generate
