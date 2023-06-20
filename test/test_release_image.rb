@@ -8,7 +8,7 @@ describe ReleaseImage do
 
     ReleaseImage.generate(version: "1.0.0")
 
-    assert File.exist?("test/release_images/images/release_1_0_0.png")
+    assert File.exist?("test/release_image/images/release_1_0_0.png")
   end
 
   it "requires version" do
