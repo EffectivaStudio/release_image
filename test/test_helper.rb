@@ -5,7 +5,10 @@ require "release_image"
 
 require "minitest/autorun"
 
-ReleaseImage.config.api_key     = "BuncfOWT8XmQM2D42NqyNl_VWL3StgacRRrculTJsqs"
+# Get api key at:
+# https://unsplash.com/oauth/applications
+
+ReleaseImage.config.api_key     = "YOUR_API_KEY"
 ReleaseImage.config.keywords    = %w[nature wallpaper]
 ReleaseImage.config.folder_path = "test/release_image"
-ReleaseImage.config.seasons    = true
+ReleaseImage.config.seasons     = true

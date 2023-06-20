@@ -118,7 +118,6 @@ module ReleaseImage
     end
 
     def url
-      puts "query: #{query}"
       "#{BASE_URL}?query=#{query}&client_id=#{@api_key}"
     end
 
