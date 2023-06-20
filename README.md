@@ -1,8 +1,6 @@
-# ReleaseImage
+# Release Image
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/release_image`. To experiment with that code, run `bin/console` for an interactive prompt.
+![release_1_0_0](https://github.com/EffectivaStudio/release_image/assets/66572/fd734af3-67a7-400e-8523-d507ed349dba)
 
 ## Installation
 
