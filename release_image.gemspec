@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["info@effectiva.hr"]
   spec.summary = "Generate random image for release"
   spec.description = "It genrates a random image for release using Unsplash API"
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage = "https://github.com/EffectivaStudio/release_image"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
@@ -30,8 +30,8 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
+  spec.add_dependency "down"
+  spec.add_dependency "mini_magick"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
