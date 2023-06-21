@@ -11,11 +11,14 @@ GEM
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    dotenv (2.8.1)
     down (5.4.1)
       addressable (~> 2.8)
     json (2.6.3)
     mini_magick (4.12.0)
     minitest (5.18.0)
+    mocha (2.0.4)
+      ruby2_keywords (>= 0.0.5)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
@@ -39,6 +42,7 @@ GEM
     rubocop-ast (1.29.0)
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
+    ruby2_keywords (0.0.5)
     unicode-display_width (2.4.2)
 
 PLATFORMS
@@ -46,7 +50,9 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  dotenv
   minitest
+  mocha
   rake
   release_image!
   rubocop

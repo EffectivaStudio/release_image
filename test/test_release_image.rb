@@ -4,7 +4,7 @@ require "test_helper"
 
 describe ReleaseImage do
   it "generates image" do
-    FileUtils.rm_rf("test/release_images/images")
+    FileUtils.rm_rf("test/release_image/images")
 
     ReleaseImage.generate(version: "1.0.0")
 
@@ -15,5 +15,29 @@ describe ReleaseImage do
     assert_raises ArgumentError do
       ReleaseImage::Generator.new
     end
+  end
+end
+
+describe ReleaseImage::Generator do
+  it "adds text and logo to image" do
+    generator = ReleaseImage::Generator.new(version: "1.0.0", date: "21.06.2023")
+
+    generator.stubs(
+      download_image: true,
+      image_path: "test/fixtures/input_image.jpg",
+      release_image_path: "test/release_image/images/output_image.png"
+    )
+
+    generator.generate
+
+    expected_image = File.open("test/fixtures/output_image.png", "rb")
+    actual_image   = File.open("test/release_image/images/output_image.png", "rb")
+
+    assert_equal expected_image.read.bytes, actual_image.read.bytes
+
+    expected_image.close
+    actual_image.close
+
+    FileUtils.rm("test/release_image/images/output_image.png")
   end
 end

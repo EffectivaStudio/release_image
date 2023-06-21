@@ -54,7 +54,6 @@ module ReleaseImage
 
       data = JSON.parse(response.body)
       image_url = data["urls"]["regular"]
-
       image = Down.download(image_url)
       File.binwrite(image_path, image.read)
     end
@@ -66,12 +65,14 @@ module ReleaseImage
       add_background_and_text(image)
       result = add_logo(image)
 
-      underscored_version = @version.tr(".", "_")
-      release_image_path = "#{@folder_path}/images/release_#{underscored_version}.png"
-
       result.write release_image_path
 
       release_image_path
+    end
+
+    def release_image_path
+      underscored_version = @version.tr(".", "_")
+      "#{@folder_path}/images/release_#{underscored_version}.png"
     end
 
     def resize_image(image)
