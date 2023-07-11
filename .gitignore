@@ -6,6 +6,6 @@
 /pkg/
 /spec/reports/
 /tmp/
-/test/release_image/images/
+/test/images/
 .ruby-version
 .env

@@ -2,17 +2,42 @@
 
 ![release_1_0_0](https://github.com/EffectivaStudio/release_image/assets/66572/fd734af3-67a7-400e-8523-d507ed349dba)
 
-## Installation
 
-TODO: Replace `release_image` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+The Release Images gem is a powerful tool designed specifically for creating captivating cover images for release posts or notices in your application. It streamlines the process of generating visually appealing images by seamlessly incorporating your app's logo, version, and release date. Additionally, it provides the ability to fetch random images from the extensive collection available on the [Unsplash](https://unsplash.com/) service.
+
+## Features
+
+  🌟 Effortlessly create stunning cover images for release posts or notices
+  🌟 Seamlessly integrate your app's logo, version, and release date into the images
+  🌟 Utilize the vast collection of Unsplash to obtain random images
+  🌟 Customize various aspects of the image generation process
+
+## Configuration Options
+
+The Release Images gem offers the following configuration options:
+
+- `api_key` - Your Unsplash API key
+- `folder_path` - The destination folder where the generated images will be saved e.g., `temp/release_image`
+- `logo_path` - The path to your app's logo image
+- `keywords` - An array of keywords that can be used to filter the random image e.g., `["nature", "landscape"]`
+- `seasons` - Generate images based on the current season of the year
+
+## Getting Started
+
+To begin using the Release Images gem, start by installing it and configuring the desired options in your application. Once set up, you can easily generate captivating cover images that will enhance the visual appeal of your release posts or notices.
+
+For detailed instructions and further information, please refer to the [documentation](https://example.com/release-images-gem).
+
+Enjoy creating eye-catching and unique cover images for your release posts with the Release Images gem!
+
+
+## Installation
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add release_image
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install release_image
+    source "https://rubygems.pkg.github.com/effectivastudio" do
+      gem "release_image", require: false
+    end
 
 ## Usage
 
@@ -37,7 +62,8 @@ APP_ROOT = File.expand_path('..', __dir__)
 
 ReleaseImage.config.api_key     = ENV.fetch("UNSPLASH_API_KEY")
 ReleaseImage.config.keywords    = %w[nature wallpaper]
-ReleaseImage.config.folder_path = File.join(APP_ROOT, "release_image")
+ReleaseImage.config.folder_path = File.join(APP_ROOT, "tmp/release_image")
+ReleaseImage.config.logo_path   = File.join(APP_ROOT, "app/assets/images/logo/release_logo.png")
 ReleaseImage.config.seasons     = true
 
 version = ARGV[0]
@@ -48,21 +74,17 @@ abort("Please provide a release version".red) unless version
 puts ReleaseImage.generate(version: version, date: date).green
 ```
 
-**Note**
-Add the logo image to the specified `<folder_path>`.
-Name the image `logo.png` and it will be added to the generated image.
-Add `<folder_path>/images/` to your `.gitignore` file.
-No need to add the generated image to git repo.
-
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `bundle exec rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install:local`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.pkg.github.com](https://rubygems.pkg.github.com/effectivastudio).
+
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/release_image. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/release_image/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/EffectivaStudio/release_image. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/EffectivaStudio/release_image/blob/main/CODE_OF_CONDUCT.md).
+
 
 ## License
 
@@ -70,4 +92,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the ReleaseImage project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/release_image/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the PatchCraft project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/EffectivaStudio/release_image/blob/main/CODE_OF_CONDUCT.md).
