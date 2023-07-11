@@ -12,5 +12,6 @@ require "mocha/minitest"
 
 ReleaseImage.config.api_key     = ENV.fetch("UNSPLASH_API_KEY")
 ReleaseImage.config.keywords    = %w[nature wallpaper]
-ReleaseImage.config.folder_path = "test/release_image"
+ReleaseImage.config.folder_path = "test/images"
+ReleaseImage.config.logo_path   = "test/fixtures/logo.png"
 ReleaseImage.config.seasons     = true

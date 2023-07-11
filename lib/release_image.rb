@@ -11,11 +11,12 @@ module ReleaseImage
   class Error < StandardError; end
 
   class Config
-    attr_accessor :api_key, :folder_path, :keywords, :seasons
+    attr_accessor :api_key, :folder_path, :logo_path, :keywords, :seasons
 
     def initialize
       @api_key = nil
       @folder_path = nil
+      @logo_path = nil
       @keywords = []
       @seasons = true
     end
@@ -29,6 +30,7 @@ module ReleaseImage
       @date    = date ? Date.parse(date) : Date.today
 
       @folder_path = ReleaseImage.config.folder_path
+      @logo_path   = ReleaseImage.config.logo_path
       @keywords    = ReleaseImage.config.keywords
       @api_key     = ReleaseImage.config.api_key
       @seasons     = ReleaseImage.config.seasons
@@ -41,11 +43,7 @@ module ReleaseImage
     end
 
     def create_folder
-      FileUtils.mkdir_p(images_path) unless File.directory?(images_path)
-    end
-
-    def images_path
-      Pathname(@folder_path).join("images").expand_path
+      FileUtils.mkdir_p(@folder_path) unless File.directory?(@folder_path)
     end
 
     def download_image
@@ -72,7 +70,7 @@ module ReleaseImage
 
     def release_image_path
       underscored_version = @version.tr(".", "_")
-      "#{@folder_path}/images/release_#{underscored_version}.png"
+      "#{@folder_path}/release_#{underscored_version}.png"
     end
 
     def resize_image(image)
@@ -101,7 +99,7 @@ module ReleaseImage
     end
 
     def add_logo(image)
-      logo = MiniMagick::Image.open(logo_path)
+      logo = MiniMagick::Image.open(@logo_path)
 
       image.composite(logo) do |c|
         c.compose "Over"
@@ -110,11 +108,7 @@ module ReleaseImage
     end
 
     def image_path
-      "#{@folder_path}/images/image.jpg"
-    end
-
-    def logo_path
-      "#{@folder_path}/logo.png"
+      "#{@folder_path}/image.jpg"
     end
 
     def url

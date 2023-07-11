@@ -4,11 +4,11 @@ require "test_helper"
 
 describe ReleaseImage do
   it "generates image" do
-    FileUtils.rm_rf("test/release_image/images")
+    FileUtils.rm_rf("test/release_image")
 
     ReleaseImage.generate(version: "1.0.0")
 
-    assert File.exist?("test/release_image/images/release_1_0_0.png")
+    assert File.exist?("test/images/release_1_0_0.png")
   end
 
   it "requires version" do
@@ -25,19 +25,19 @@ describe ReleaseImage::Generator do
     generator.stubs(
       download_image: true,
       image_path: "test/fixtures/input_image.jpg",
-      release_image_path: "test/release_image/images/output_image.png"
+      release_image_path: "test/images/output_image.png"
     )
 
     generator.generate
 
     expected_image = File.open("test/fixtures/output_image.png", "rb")
-    actual_image   = File.open("test/release_image/images/output_image.png", "rb")
+    actual_image   = File.open("test/images/output_image.png", "rb")
 
     assert_equal expected_image.read.bytes, actual_image.read.bytes
 
     expected_image.close
     actual_image.close
 
-    FileUtils.rm("test/release_image/images/output_image.png")
+    FileUtils.rm("test/images/output_image.png")
   end
 end
