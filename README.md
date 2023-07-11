@@ -1,9 +1,9 @@
-# Release Image
+# ReleaseImage
 
 ![release_1_0_0](https://github.com/EffectivaStudio/release_image/assets/66572/fd734af3-67a7-400e-8523-d507ed349dba)
 
 
-The Release Images gem is a powerful tool designed specifically for creating captivating cover images for release posts or notices in your application. It streamlines the process of generating visually appealing images by seamlessly incorporating your app's logo, version, and release date. Additionally, it provides the ability to fetch random images from the extensive collection available on the [Unsplash](https://unsplash.com/) service.
+The ReleaseImage gem is a powerful tool designed specifically for creating captivating cover images for release posts or notices in your application. It streamlines the process of generating visually appealing images by seamlessly incorporating your app's logo, version, and release date. Additionally, it provides the ability to fetch random images from the extensive collection available on the [Unsplash](https://unsplash.com/) service.
 
 ## Features
 
@@ -12,24 +12,7 @@ The Release Images gem is a powerful tool designed specifically for creating cap
 - 🌟 Utilize the vast collection of Unsplash to obtain random images
 - 🌟 Customize various aspects of the image generation process
 
-## Configuration Options
-
-The Release Images gem offers the following configuration options:
-
-- `api_key` - Your Unsplash API key
-- `keywords` - An array of keywords that can be used to filter the random image
-- `folder_path` - The destination folder where the generated images will be saved
-- `logo_path` - The path to your app's logo image
-- `seasons` - Generate images based on the current season of the year
-
-## Getting Started
-
-To begin using the Release Images gem, start by installing it and configuring the desired options in your application. Once set up, you can easily generate captivating cover images that will enhance the visual appeal of your release posts or notices.
-
-For detailed instructions and further information, please refer to the [documentation](https://example.com/release-images-gem).
-
-Enjoy creating eye-catching and unique cover images for your release posts with the Release Images gem!
-
+Enjoy creating eye-catching and unique cover images for your release posts with the ReleaseImage gem!
 
 ## Installation
 
@@ -55,10 +38,10 @@ APP_ROOT = File.expand_path('..', __dir__)
 # Get api key at:
 # https://unsplash.com/oauth/applications
 #
-# Keywords are used to search for images.
-# Folder path is where the generated image will be saved.
-# Seasons are used to generate a season specific image by adding the actual
-# season (Spring, Summer, Autumn, or Winter) to the keywords.
+# keywords - An array of keywords that can be used to filter the random image
+# folder_path - The destination folder where the generated images will be saved
+# logo_path - The path to your app's logo image
+# seasons - Generate images based on the current season of the year
 
 ReleaseImage.config.api_key     = ENV.fetch("UNSPLASH_API_KEY")
 ReleaseImage.config.keywords    = %w[nature wallpaper]
@@ -92,4 +75,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the PatchCraft project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/EffectivaStudio/release_image/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the ReleaseImage project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/EffectivaStudio/release_image/blob/main/CODE_OF_CONDUCT.md).
