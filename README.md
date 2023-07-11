@@ -17,9 +17,9 @@ The Release Images gem is a powerful tool designed specifically for creating cap
 The Release Images gem offers the following configuration options:
 
 - `api_key` - Your Unsplash API key
-- `folder_path` - The destination folder where the generated images will be saved e.g., `temp/release_image`
+- `keywords` - An array of keywords that can be used to filter the random image
+- `folder_path` - The destination folder where the generated images will be saved
 - `logo_path` - The path to your app's logo image
-- `keywords` - An array of keywords that can be used to filter the random image e.g., `["nature", "landscape"]`
 - `seasons` - Generate images based on the current season of the year
 
 ## Getting Started
