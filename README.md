@@ -7,10 +7,10 @@ The Release Images gem is a powerful tool designed specifically for creating cap
 
 ## Features
 
-  🌟 Effortlessly create stunning cover images for release posts or notices
-  🌟 Seamlessly integrate your app's logo, version, and release date into the images
-  🌟 Utilize the vast collection of Unsplash to obtain random images
-  🌟 Customize various aspects of the image generation process
+- 🌟 Effortlessly create stunning cover images for release posts or notices
+- 🌟 Seamlessly integrate your app's logo, version, and release date into the images
+- 🌟 Utilize the vast collection of Unsplash to obtain random images
+- 🌟 Customize various aspects of the image generation process
 
 ## Configuration Options
 
