@@ -24,4 +24,6 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
     - name: Run the default task
+      env:
+        UNSPLASH_API_KEY:  ${{ secrets.UNSPLASH_API_KEY }}
       run: bundle exec rake
