@@ -81,7 +81,6 @@ module ReleaseImage
 
     def add_background_and_text(image) # rubocop:disable Metrics/MethodLength
       image.combine_options do |cmd|
-        cmd.compose "Over"
         cmd.geometry "+0+0"
         cmd.gravity "center"
 
@@ -102,7 +101,6 @@ module ReleaseImage
       logo = MiniMagick::Image.open(@logo_path)
 
       image.composite(logo) do |c|
-        c.compose "Over"
         c.geometry "+#{(image.width / 2) - (logo.width / 2)}+300"
       end
     end
