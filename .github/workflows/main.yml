@@ -18,6 +18,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: 'install deps'
+      run: "sudo apt install -y libfreetype6-dev gsfonts libmagickwand-dev imagemagick"
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
