@@ -88,6 +88,7 @@ module ReleaseImage
         cmd.draw "rectangle 0,0 #{image.width},#{image.height}"
 
         cmd.fill "white"
+        cmd.font "Helvetica"
 
         cmd.pointsize 80
         cmd.draw "text 0, -100 'v#{@version}'"
