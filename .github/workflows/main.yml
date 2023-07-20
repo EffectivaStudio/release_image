@@ -29,3 +29,10 @@ jobs:
       env:
         UNSPLASH_API_KEY:  ${{ secrets.UNSPLASH_API_KEY }}
       run: bundle exec rake
+
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: generated-images
+        path: images
+        retention-days: 1

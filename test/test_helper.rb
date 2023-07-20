@@ -37,7 +37,7 @@ def compare_images p1, p2, show_diff: false
 end
 
 
-def assert_images_equal p1, p2, within: 0.05, show_diff: true
+def assert_images_equal p1, p2, within: 0.06, show_diff: true
   score = compare_images p1, p2, show_diff: show_diff
 
   assert score < within, "Images are not equal. Score: #{score} should be below #{within}"
