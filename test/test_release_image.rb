@@ -22,22 +22,19 @@ describe ReleaseImage::Generator do
   it "adds text and logo to image" do
     generator = ReleaseImage::Generator.new(version: "1.0.0", date: "21.06.2023")
 
+    image_path = "test/fixtures/input_image.png"
+    release_image_path = "test/images/output_image.png"
+
     generator.stubs(
       download_image: true,
-      image_path: "test/fixtures/input_image.jpg",
-      release_image_path: "test/images/output_image.png"
+      image_path: image_path,
+      release_image_path: release_image_path
     )
 
     generator.generate
 
-    expected_image = File.open("test/fixtures/output_image.png", "rb")
-    actual_image   = File.open("test/images/output_image.png", "rb")
+    expected_image_path = "test/fixtures/output_image.png"
 
-    assert_equal expected_image.read.bytes, actual_image.read.bytes
-
-    expected_image.close
-    actual_image.close
-
-    FileUtils.rm("test/images/output_image.png")
+    assert_images_equal(expected_image_path, release_image_path)
   end
 end

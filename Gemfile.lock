@@ -23,7 +23,7 @@ GEM
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
-    public_suffix (5.0.1)
+    public_suffix (5.0.3)
     racc (1.7.1)
     rainbow (3.1.1)
     rake (13.0.6)
@@ -48,6 +48,8 @@ GEM
 PLATFORMS
   arm64-darwin-21
   arm64-darwin-22
+  ruby
+  x86_64-linux
 
 DEPENDENCIES
   dotenv

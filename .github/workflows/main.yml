@@ -18,10 +18,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: 'install deps'
+      run: "sudo apt install -y libfreetype6-dev gsfonts libmagickwand-dev imagemagick"
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
     - name: Run the default task
+      env:
+        UNSPLASH_API_KEY:  ${{ secrets.UNSPLASH_API_KEY }}
       run: bundle exec rake
+
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: generated-images
+        path: images
+        retention-days: 1
