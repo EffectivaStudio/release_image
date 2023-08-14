@@ -9,3 +9,4 @@
 /test/images/
 .ruby-version
 .env
+.DS_Store
