@@ -1,8 +1,8 @@
-# ReleaseImage
+# Release Image
 
 ![release_1_0_0](https://github.com/EffectivaStudio/release_image/assets/66572/e73724ee-3da7-4769-adcf-cdf26816d9d0)
 
-The ReleaseImage gem is a powerful tool designed specifically for creating captivating cover images for release posts or notices in your application. It streamlines the process of generating visually appealing images by seamlessly incorporating your app's logo, version, and release date. Additionally, it provides the ability to fetch random images from the extensive collection available on the [Unsplash](https://unsplash.com/) service.
+The Release Image gem is a powerful tool designed specifically for creating captivating cover images for release posts or notices in your application. It streamlines the process of generating visually appealing images by seamlessly incorporating your app's logo, version, and release date. Additionally, it provides the ability to fetch random images from the extensive collection available on the [Unsplash](https://unsplash.com/) service.
 
 ## Features
 
@@ -11,11 +11,11 @@ The ReleaseImage gem is a powerful tool designed specifically for creating capti
 - 🌟 Utilize the vast collection of Unsplash to obtain random images
 - 🌟 Customize various aspects of the image generation process
 
-Enjoy creating eye-catching and unique cover images for your release posts with the ReleaseImage gem!
+Enjoy creating eye-catching and unique cover images for your release posts with the Release Image gem!
 
 ## Installation
 
-Install the gem and add to the application's Gemfile by executing:
+Install the gem and add it to the application's Gemfile by executing:
 
     source "https://rubygems.pkg.github.com/effectivastudio" do
       gem "release_image", require: false
@@ -74,4 +74,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the ReleaseImage project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/EffectivaStudio/release_image/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Release Image project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/EffectivaStudio/release_image/blob/main/CODE_OF_CONDUCT.md).
