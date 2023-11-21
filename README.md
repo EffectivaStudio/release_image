@@ -28,11 +28,27 @@ Example `bin/release_image` script:
 ```rb
 #!/usr/bin/env ruby
 
-require 'dotenv/load'
+require "dotenv/load"
+require "optparse"
 require "colorize"
 require "release_image"
 
-APP_ROOT = File.expand_path('..', __dir__)
+APP_ROOT = File.expand_path("..", __dir__)
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: bin/release_image version [date] [options]"
+
+  opts.on("--skip-download", "Skip downloading a random image and use a previously downloaded image instead.") do
+    options[:skip_download] = true
+  end
+
+  opts.on("-h", "--help", "Prints this help") do
+    puts opts
+    exit
+  end
+end.parse!
 
 # Get api key at:
 # https://unsplash.com/oauth/applications
@@ -53,7 +69,17 @@ date    = ARGV[1]
 
 abort("Please provide a release version".red) unless version
 
-puts ReleaseImage.generate(version: version, date: date).green
+puts ReleaseImage.generate(version: version, date: date, skip_download: options[:skip_download]).green
+```
+
+### Use existing image
+
+Sometimes you may want to skip downloading a random image and use a previously downloaded image instead. This can be
+achieved by setting the `skip_download` option to `true`. Image is downloaded by default and saved to the `folder_path`
+directory as `image.jpg`.
+
+```rb
+ReleaseImage.generate(version: version, date: date, skip_download: true)
 ```
 
 ## Development
