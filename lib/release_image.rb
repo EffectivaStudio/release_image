@@ -25,9 +25,11 @@ module ReleaseImage
   class Generator
     BASE_URL = "https://api.unsplash.com/photos/random"
 
-    def initialize(version:, date: nil)
+    def initialize(version:, date: nil, skip_download: false)
       @version = version
       @date    = date ? Date.parse(date) : Date.today
+
+      @skip_download = skip_download
 
       @folder_path = ReleaseImage.config.folder_path
       @logo_path   = ReleaseImage.config.logo_path
@@ -38,7 +40,7 @@ module ReleaseImage
 
     def generate
       create_folder
-      download_image
+      download_image unless @skip_download
       create_release_image
     end
 
@@ -138,7 +140,7 @@ module ReleaseImage
     @config ||= ReleaseImage::Config.new
   end
 
-  def self.generate(version:, date: nil)
-    Generator.new(version: version, date: date).generate
+  def self.generate(version:, date: nil, skip_download: false)
+    Generator.new(version: version, date: date, skip_download: skip_download).generate
   end
 end
