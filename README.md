@@ -38,7 +38,7 @@ APP_ROOT = File.expand_path("..", __dir__)
 options = {}
 
 OptionParser.new do |opts|
-  opts.banner = "Usage: bin/release_image [options] version [date]"
+  opts.banner = "Usage: bin/release_image version [date] [options]"
 
   opts.on("--skip-download", "Skip downloading a random image and use a previously downloaded image instead.") do
     options[:skip_download] = true
