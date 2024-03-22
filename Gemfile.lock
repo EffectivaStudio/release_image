@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    release_image (0.3.1)
+    release_image (0.3.2)
       down
       mini_magick
 
