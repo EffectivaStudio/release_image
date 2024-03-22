@@ -2,8 +2,6 @@
 
 ![release_1_0_0](https://github.com/EffectivaStudio/release_image/assets/66572/e73724ee-3da7-4769-adcf-cdf26816d9d0)
 
-[![Gem Version](https://badge.fury.io/rb/release_image.svg)](https://badge.fury.io/rb/release_image)
-
 The Release Image gem is a simple tool designed specifically to help create cover images for release posts or notices within your application. It makes it easy to include essential elements like your app's logo, version, and release date in the images. It also lets you pick from a large collection of images from [Unsplash](https://unsplash.com/) service.
 
 ## Features
