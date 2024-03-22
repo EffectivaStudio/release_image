@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.3.3] - 2024-03-22
+
+- Update changelog URI in gemspec
+
 ## [0.3.2] - 2024-03-22
 
 - Update readme
