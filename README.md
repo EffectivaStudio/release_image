@@ -4,7 +4,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/release_image.svg)](https://badge.fury.io/rb/release_image)
 
-The Release Image gem is a powerful tool designed specifically for creating captivating cover images for release posts or notices in your application. It streamlines the process of generating visually appealing images by seamlessly incorporating your app's logo, version, and release date. Additionally, it provides the ability to fetch random images from the extensive collection available on the [Unsplash](https://unsplash.com/) service.
+The Release Image gem is a simple tool designed specifically to help create cover images for release posts or notices within your application. It makes it easy to include essential elements like your app's logo, version, and release date in the images. It also lets you pick from a large collection of images from [Unsplash](https://unsplash.com/) service.
 
 ## Features
 
