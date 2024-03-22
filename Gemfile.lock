@@ -1,14 +1,14 @@
 PATH
   remote: .
   specs:
-    release_image (0.3.0)
+    release_image (0.3.1)
       down
       mini_magick
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.5)
+    addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     dotenv (2.8.1)
